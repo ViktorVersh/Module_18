@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <meta charset="UTF-8">
+    <title>Интернет магазин</title>
+</head>
+<body>
+    <header>
+        <img src="{% static 'images/1.png' %}" alt = "Логотип интернет магазина" width="150">
+    </header>
+    <h1>Добро пожаловать в мой интернет магазин</h1>
+    {% block content %}
+    <h2>Каталог товаров</h2>
+    {% if products %}
+        {% for i in products %}
+            <!--forloop.counter показывает порядковый номер элемента в цикле-->
+            <h3>{{ forloop.counter }}. {{ i.name }} - {{ i.price }} -- <button>Купить</button></h3>
+    {% endfor %}
+    {% else %}
+        <h2>Товары отсутствуют</h2>
+    {% endif %}
+    {% endblock %}
+<h4> Автор проекта: Вершинин Виктор</h4>
+</body>
+<p>© 2024, Интернет-магазин</p>
+</html>
