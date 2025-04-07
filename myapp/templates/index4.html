@@ -1,19 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <h1>{{ text }}</h1>
-    <h1>{{ name }}</h1>
-    {%for i in list %}
-        <p>{{ i|floatformat:3 }}</p>
-    {% endfor %}
-    {% if len_list > 4 %}
-        <h2>Ok</h2>
-    {% else %}
-        <h2>Not Ok</h2>
-    {% endif %}
-</body>
-</html>
+{% extends 'index3.html' %}
+
+{% block content %}
+    {{block.super}}
+    <p>Приветствую вас</p>
+{% endblock %}
+{% block footer %}
+    {{block.super}}
+    <p>Спасибо за просмотр!</p>
+{% endblock %}

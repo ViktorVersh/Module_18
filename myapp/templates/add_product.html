@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% extends "index3.html" %}
+{% block content %}
+<h2>Добавить новый товар</h2>
+<form method="post">
+    {% csrf_token %}
+        <label for="name">Название товара:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="category">Категория товара:</label>
+        <select id="category" name="category" required>
+            <option value="smartphone">Смартфоны</option>
+            <option value="computer">Компьютеры и ноутбуки</option>
+            <option value="accessories">Аксессуары</option>
+            <option value="планшет">Планшеты</option>
+        </select>
+
+    <label for="price">Цена:</label>
+    <input type="number" id="price" name="price" required>
+
+    <button type="submit">Добавить товар</button>
+</form>
+{% endblock %}
